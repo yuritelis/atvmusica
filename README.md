@@ -1,4 +1,4 @@
-# README ATIVIDADE DE DJW 2 DAS MÚSICAS
+# README ATIVIDADE DE DJW DA MÚSICA
 README da atividade passada em sala de aula para a matéria de DJW 2, na qual é feito um cenário jogável com o Javascript utilizando uma música como base para a cena.
 ## COMO É O JOGO?
 O jogo é uma continuação da atividade de LP, feita pelo Unity, onde conta sobre um capitão que perdeu sua tripulação por sua ganância e ódio.
