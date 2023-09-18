@@ -12,74 +12,66 @@ class Obstacle {
     }
 }
 
-// Obtenha o elemento canvas e o contexto 2D
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const obstacles = [];
 
-// Defina as coordenadas iniciais do personagem
 let bX = 100;
 let bY = 100;
 let i = 0;
 
-// Defina uma função para desenhar o personagem
+// função para desenhar o personagem do jogador
 function drawBarco() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "brown";
     ctx.fillRect(bX, bY, 40, 40);
 }
 
-// Adicione event listeners para os botões de controle
+// event listeners para a movimentação do personagem
 document.getElementById("moveLeft").addEventListener("click", () => {
-    bX -= 40; // Mova o personagem para a esquerda
-    drawBarco(); // Redesenhe o personagem
+    bX -= 40;
+    drawBarco();
 });
 document.getElementById("moveRight").addEventListener("click", () => {
-    bX += 40; // Mova o personagem para a direita
-    drawBarco(); // Redesenhe o personagem
+    bX += 40;
+    drawBarco();
 });
 document.getElementById("moveUp").addEventListener("click", () => {
-    bY -= 40; // Mova o personagem para a cima
-    drawBarco(); // Redesenhe o personagem
+    bY -= 40;
+    drawBarco();
 });
 document.getElementById("moveDown").addEventListener("click", () => {
-    bY += 40; // Mova o personagem para a baixo
-    drawBarco(); // Redesenhe o personagem
+    bY += 40;
+    drawBarco();
 });
 
+// função de geração dos inimigos
 function generateObstacles() {
-    // Defina a posição inicial dos obstáculos e a velocidade
     const startX = 0;
-    const startY = 100; // Ajuste a posição vertical conforme necessário
-    const speed = 2; // Ajuste a velocidade conforme necessário
+    const startY = 100;
+    const speed = 2;
 
-    // Crie um novo obstáculo e adicione-o ao array
     const obstacle = new Obstacle(startX, startY, 50, 30, speed);
     obstacles.push(obstacle);
 }
 
-// Defina uma função para atualizar o jogo
 function updateGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < obstacles.length; i++) {
         const obstacle = obstacles[i];
         obstacle.move();
-        ctx.fillStyle = "red"; // Cor dos carros (você pode ajustar isso)
+        ctx.fillStyle = "red";
         ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
     }
 
-    drawBarco(); // Desenhe o barco
+    drawBarco(); // desenha o barco
 
-    // Verifique se o personagem chegou à meta (pode ser uma linha superior)
-
-    // Verifique colisões com obstáculos
-
-    requestAnimationFrame(updateGame); // Chame a função novamente para atualizar
+    requestAnimationFrame(updateGame); // chama a função de atualização de novo
 }
 
-// Chame generateObstacles a cada 2 segundos
+// chama o gerador dos inimigos a cada 2 segundos
 setInterval(generateObstacles, 2000);
 
-// Inicie o loop de jogo
+// loop de jogo
 updateGame();
