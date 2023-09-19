@@ -26,5 +26,10 @@ Nosso intuito era fazer um jogo similar com Frogger, porém o personagem do joga
 
 Já com os inimigos deu errado, criamos uma function de desenho para os inimigos que desenhava eles, mas não movimentava automaticamente, então pensamos numa outra função para a geração de inimigos/obstáculos junto de um loop para a geração deles, porém não funcionou, o inimigo não era desenhado e nem movimentava. Com isso tentamos pesquisar, inspecionar a página (não aparecia erro algum) e até mesmo pedir ajuda de outros colegas, mas não conseguimos consertar os erros.
 
+##Vídeo<br>
+https://github.com/yuritelis/atvmusica/assets/127852225/51b7040e-87ee-4ca3-80c8-71834ad7c979
+
+
+
 ## AUTORES
 Kauan Jesus e Yuri Telis
